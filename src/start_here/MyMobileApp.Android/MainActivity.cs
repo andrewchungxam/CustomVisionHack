@@ -9,6 +9,7 @@ using Android.Widget;
 using Android.OS;
 using MyMobileApp.Common;
 using Plugin.Permissions;
+using Xam.Plugins.OnDeviceCustomVision;
 
 namespace MyMobileApp.Droid
 {
@@ -24,6 +25,8 @@ namespace MyMobileApp.Droid
 			Plugin.CurrentActivity.CrossCurrentActivity.Current.Activity = this;
 
 			global::Xamarin.Forms.Forms.Init(this, bundle);
+
+            CrossImageClassifier.Current.Init("model.pb", ModelType.General);
 
 			LoadApplication(new App());
 		}

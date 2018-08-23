@@ -118,6 +118,9 @@
     <Reference Include="Xamarin.Forms.Xaml">
       <HintPath>..\packages\Xamarin.Forms.2.5.0.122203\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
+    <Reference Include="Xam.Plugins.OnDeviceCustomVision">
+      <HintPath>..\packages\Xam.Plugins.OnDeviceCustomVision.1.0.0\lib\Xamarin.iOS10\Xam.Plugins.OnDeviceCustomVision.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
@@ -144,6 +147,9 @@
   <ItemGroup>
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Main.cs" />
+    <Compile Include="Resources\mymodel.cs">
+      <DependentUpon>mymodel.mlmodel</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
@@ -158,6 +164,9 @@
       <Project>{5615F239-0E36-41D7-B895-6AFBABB2918A}</Project>
       <Name>MyMobileApp.Common</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <CoreMLModel Include="Resources\mymodel.mlmodel" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.5.0.122203\build\netstandard1.0\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.5.0.122203\build\netstandard1.0\Xamarin.Forms.targets')" />

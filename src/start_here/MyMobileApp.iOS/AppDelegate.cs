@@ -5,6 +5,7 @@ using System.Linq;
 using Foundation;
 using MyMobileApp.Common;
 using UIKit;
+using Xam.Plugins.OnDeviceCustomVision;
 
 namespace MyMobileApp.iOS
 {
@@ -15,6 +16,8 @@ namespace MyMobileApp.iOS
 		{
 			global::Xamarin.Forms.Forms.Init();
 			LoadApplication(new App());
+
+            CrossImageClassifier.Current.Init("mymodel", ModelType.General);
 
 			return base.FinishedLaunching(app, options);
 		}
